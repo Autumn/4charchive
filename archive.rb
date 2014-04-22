@@ -18,7 +18,7 @@ posts.each do |post|
 end
 
 files.each do |file|
-  if not File.exists? file
+  if not File.exists? File.basename(file)
     system "wget #{file.sub(/^\/\//, "")}" 
   end
 end
